@@ -1,0 +1,22 @@
+const income_1 = Number(prompt("Введіть дохід за 1-й квартал:"));
+const income_2 = Number(prompt("Введіть дохід за 2-й квартал:"));
+const income_3 = Number(prompt("Введіть дохід за 3-й квартал:"));
+const income_4 = Number(prompt("Введіть дохід за 4-й квартал:"));
+const totalIncome = income_1 + income_2 + income_3 + income_4;
+const taxRate = 0.05;
+const esv = 18000;
+const unifiedTaxAmount = totalIncome * taxRate;
+const balanceAfterTaxes = totalIncome - unifiedTaxAmount - esv;
+const fundAlive = balanceAfterTaxes * 0.10;
+const fundChildren = balanceAfterTaxes * 0.05;
+const usdRate = 43.7;
+const eurRate = 51.2;
+const currencySavings = (2500 * eurRate) + (3000 * usdRate);
+const businessInvestment = 100000;
+const finalBalance = balanceAfterTaxes - fundAlive - fundChildren - businessInvestment - currencySavings;
+
+console.log(`За рік Максим заробив - ${totalIncome} грн`);
+console.log(`Єдиний податок 5% складає ${unifiedTaxAmount} грн`);
+console.log(`Відрахування у фонди "Повернись живим" та "Діти Героїв" складає ${fundAlive} грн та ${fundChildren} грн відповідно`);
+console.log(`На валютну карту сумарно відкладено ще ${currencySavings} грн`);
+console.log(`Залишок на рахунку Максима складає ${finalBalance} грн`);
